@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gankio/constant/constants.dart';
 import 'package:flutter_gankio/pages/search_page.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class HotPage extends StatefulWidget{
   @override
@@ -16,21 +15,21 @@ class HotPageState extends State<HotPage>{
   List<String> historyList;
   int _valueChoice = null;
 
-  Future _getHistorys() async{
-    SharedPreferences sp = await SharedPreferences.getInstance();
-    historyList = sp.get(Constants.HISTORY_DATA);
-  }
+//  Future _getHistorys() async{
+//    SharedPreferences sp = await SharedPreferences.getInstance();
+//    historyList = sp.get(Constants.HISTORY_DATA);
+//  }
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    _getHistorys();
+   // _getHistorys();
     if(historyList == null){
       historyList = List<String>();
     }
   }
-g
+
   @override
   Widget build(BuildContext context) {
     return ListView(

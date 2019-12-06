@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gankio/pages/home_list_page.dart';
+import 'package:flutter_gankio/pages/login_page.dart';
 
 import 'fuli_list_page.dart';
 import 'home_page.dart';
@@ -91,7 +92,7 @@ class _GankioAppState extends State<GankioApp>{
   void initData() {
     //叠加的效果
     _body = IndexedStack(
-        children: <Widget>[HomePage(), FuliListPage(), HomeListPage()],
+        children: <Widget>[HomePage(), FuliListPage(), LoginPage()],
         index: _tabIndex,
     );
 

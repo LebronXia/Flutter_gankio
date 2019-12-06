@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gankio/constant/constants.dart';
 import 'package:flutter_gankio/pages/search_listpage.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 import 'hot_page.dart';
 
@@ -34,7 +33,7 @@ class SearchPageState extends State<SearchPage>{
     super.initState();
     _searchController = TextEditingController(text: searchStr);
     _searchListPage = SearchListPage(ValueKey(_searchController.text));
-    _getHistorys();
+   // _getHistorys();
     if(historyList == null){
       historyList = List<String>();
     }
@@ -47,15 +46,15 @@ class SearchPageState extends State<SearchPage>{
     });
   }
 
-  static Future saveHistorys(List<String> list) async {
-    SharedPreferences sp = await SharedPreferences.getInstance();
-    await sp.setStringList(Constants.HISTORY_DATA, list);
-  }
+//  static Future saveHistorys(List<String> list) async {
+//    SharedPreferences sp = await SharedPreferences.getInstance();
+//    await sp.setStringList(Constants.HISTORY_DATA, list);
+//  }
 
-   Future _getHistorys() async{
-    SharedPreferences sp = await SharedPreferences.getInstance();
-    historyList = sp.get(Constants.HISTORY_DATA);
-  }
+//   Future _getHistorys() async{
+//    SharedPreferences sp = await SharedPreferences.getInstance();
+//    historyList = sp.get(Constants.HISTORY_DATA);
+//  }
 
   @override
   Widget build(BuildContext context) {
@@ -120,7 +119,7 @@ class SearchPageState extends State<SearchPage>{
               changeContent();
               if(_searchController.text.isEmpty){
                   historyList.add(_searchController.text);
-                  saveHistorys(historyList);
+                 // saveHistorys(historyList);
               }
               //print("点击了搜索");
 
